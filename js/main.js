@@ -122,16 +122,19 @@ let AgregarAlCarritoMalbec = () => {
                 alert('usted agrego una botella de '+ Malbec[indiceMalbec].nombre +' malbec al carrito con un valor de $'+ Malbec[indiceMalbec].precio)
                 CarritoDeCompra.push (Malbec[indiceMalbec].precio)
                 console.log (CarritoDeCompra)
-                AgregarAlCarritoMalbec()
+                IrAlCarrito ()
+
                 
             case 2 :
                 alert('usted agrego una botella de '+ Malbec[indiceMalbec].nombre +' malbec al carrito con un valor de $'+ Malbec[indiceMalbec].precio)
                 CarritoDeCompra.push (Malbec[indiceMalbec].precio)
                 console.log (CarritoDeCompra)
+                IrAlCarrito ()
             case 3 :
                 alert('usted agrego una botella de '+ Malbec[indiceMalbec].nombre +' malbec al carrito con un valor de $'+ Malbec[indiceMalbec].precio)
                 CarritoDeCompra.push (Malbec[indiceMalbec].precio)
                 console.log (CarritoDeCompra)
+                IrAlCarrito ()
             case 4 :
                 SeleccionarUva()
                 break;
@@ -142,29 +145,32 @@ let AgregarAlCarritoMalbec = () => {
             
             default :
             alert ('porfavor coloque una de las opciones mostradas en el mensaje')
+            AgregarAlCarritoMalbec ()
         }
 
             
         }
 
 let AgregarAlCarritoChardonnay = () => {
-    let BotellaChardonnay = parseInt(prompt ('que botella de chardonnay desea agregar? (1-2-3)')) 
+    let BotellaChardonnay = parseInt(prompt ('que botella de Chardonnay desea agregar? (1 para trumpeter-2 para santa Julia-3 para Escorihuela Gascon), 4 si quiere volver al menu de seleccion de uva o 5 para salir')) 
     IndiceChardonnay = (BotellaChardonnay - 1)
         switch (BotellaChardonnay) {
             case 1 :
                 alert('usted agrego una botella de '+ Chardonnay[IndiceChardonnay].nombre +' Chardonnay al carrito con un valor de $'+ Chardonnay[IndiceChardonnay].precio)
                 CarritoDeCompra.push (Chardonnay[IndiceChardonnay].precio)
                 console.log (CarritoDeCompra)
-                AgregarAlCarritoMalbec()
+                IrAlCarrito ()
                 
             case 2 :
                 alert('usted agrego una botella de '+ Chardonnay[IndiceChardonnay].nombre +' Chardonnay al carrito con un valor de $'+ Chardonnay[IndiceChardonnay].precio)
                 CarritoDeCompra.push (Chardonnay[IndiceChardonnay].precio)
                 console.log (CarritoDeCompra)
+                IrAlCarrito ()
             case 3 :
                 alert('usted agrego una botella de '+ Chardonnay[IndiceChardonnay].nombre +' Chardonnay al carrito con un valor de $'+ Chardonnay[IndiceChardonnay].precio)
                 CarritoDeCompra.push (Chardonnay[IndiceChardonnay].precio)
                 console.log (CarritoDeCompra)
+                IrAlCarrito ()
             case 4 :
                 SeleccionarUva()
                 break;
@@ -175,14 +181,35 @@ let AgregarAlCarritoChardonnay = () => {
             
             default :
             alert ('porfavor coloque una de las opciones mostradas en el mensaje')
+            AgregarAlCarritoChardonnay ()
         }
 }
 
 let AgregarAlCarritoCabernet = () => {
-    let BotellaCabernet = parseInt(prompt ('que vino desea agregar? (1-2-3)')) 
+    let BotellaCabernet = parseInt(prompt ('que botella de Cabernet desea agregar? (1 para Fond de Cave-2 para Fond de cave Reserva-3 para Saint Felicien), 4 si quiere volver al menu de seleccion de uva o 5 para salir')) 
+    IndiceCabernet = (BotellaCabernet - 1)
         switch (BotellaCabernet) {
             case 1 :
+                alert('usted agrego una botella de '+ Cabernet[IndiceCabernet].nombre +' Cabernet al carrito con un valor de $'+ Cabernet[IndiceCabernet].precio)
+                CarritoDeCompra.push (Cabernet[IndiceCabernet].precio)
+                console.log (CarritoDeCompra)
+                IrAlCarrito ()
             case 2 :
+                alert('usted agrego una botella de '+ Cabernet[IndiceCabernet].nombre +' Cabernet al carrito con un valor de $'+ Cabernet[IndiceCabernet].precio)
+                CarritoDeCompra.push (Cabernet[IndiceCabernet].precio)
+                console.log (CarritoDeCompra)
+                IrAlCarrito ()
+            case 3 :
+                alert('usted agrego una botella de '+ Cabernet[IndiceCabernet].nombre +' Cabernet al carrito con un valor de $'+ Cabernet[IndiceCabernet].precio)
+                CarritoDeCompra.push (Cabernet[IndiceCabernet].precio)
+                console.log (CarritoDeCompra)
+                IrAlCarrito ()
+            case 4 :
+                SeleccionarUva()
+                break;
+            case 5 :
+                alert ('gracias por todo, adios.')
+                break;
             default :
                 alert('la opcion ingresada no es correcta, vuelva a intentarlo.')   
                 AgregarAlCarritoCabernet()    
@@ -191,6 +218,18 @@ let AgregarAlCarritoCabernet = () => {
 
 }
 
+let IrAlCarrito = () => {
+    let continuar = prompt('Desea continuar al carrito? (si, ir al carrito/ no, seguir comprando)').toLowerCase
+    if (continuar == 'si') {
+        carritoDeCompra ()
+    } else {
+        SeleccionarUva ()
+    }
+}
+
+let carritoDeCompra = () => {
+    
+}
 
 // let Carrito = () => {
 //     let agregar = prompt ('desea agregar un vino'+vinoSeleccionado+' al carrito? (si/no)').toLowerCase
@@ -202,16 +241,9 @@ let AgregarAlCarritoCabernet = () => {
 //         SeleccionarUva ()
 
 //     }
- 
+
  //}
 
-            
 
-    
-
- 
-    
- 
-     
 SeleccionarUva ()
 
